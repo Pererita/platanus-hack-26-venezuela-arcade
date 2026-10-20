@@ -29,6 +29,8 @@ const CABINET_KEYS = {
 
 (function () {
   'use strict';
+const C_DARK='#090d16',C_WHITE='#ffffff',C_YELLOW='#ffe600',C_CYAN='#00e5ff',C_SLATE='#94a3b8',C_LIGHT='#e2e8f0',C_RED='#ff1744',C_GREEN='#39ff14',C_MUTED='#cbd5e1',C_FAFC='#f8fafc',C_E047='#fde047',C_D700='#ffd700',C_F08A='#fef08a',C_F9FF='#7ef9ff',C_5524='#8d5524',C_293B='#1e293b',C_AB00='#ffab00',C_4444='#ef4444',C_CC15='#facc15',C_5E20='#1b5e20',C_A047='#43a047',C_B6F6='#29b6f6',C_6292='#f06292',C_3935='#e53935',C_BDF8='#38bdf8',C_D600='#ffd600',C_172A='#0f172a',C_0B12='#050b12',C_B981='#10b981',C_231E='#0f231e',C_1B38='#111b38',C_2C3D='#0c2c3d',C_3818='#143818',C_0B1A='#070b1a',C_BG88='rgba(7, 13, 25, 0.88)',C_E1FF='#e1ff00',C_6EC7='#ff6ec7',C_4155='#334155',C_3859='#263859',C_223D='#11223d',C_1324='#0a1324',C_1326='#091326',S_TRI='triangle',S_SAW='sawtooth',S_SINE='sine',S_REINA='reina',S_FISC='fiscal',S_MANGO='mango',S_AREPA='arepa',S_MALTA='malta',S_BAJON='bajon',S_ALMA='alma',S_SEL='select',S_MOV='move',S_BST='boost',S_ENC='ENCAVA',S_COPA='COPA VE';
+
 
   const W = 800;
   const H = 600;
@@ -160,11 +162,11 @@ const CABINET_KEYS = {
   // PERSISTENCIA ARCADE
   // =========================================================================
   const DEFAULT_SCORES = [
-    { name: 'ENC', score: 2450, mode: 'COPA VE', veh: 'ENCAVA' },
+    { name: 'ENC', score: 2450, mode: S_COPA, veh: S_ENC },
     { name: 'BER', score: 2120, mode: 'CAIMANERA', veh: 'BERA' },
     { name: 'MAL', score: 1890, mode: 'CURDA KO', veh: 'MALIBU' },
     { name: 'MCH', score: 1640, mode: 'RELOJ', veh: 'MACHITO' },
-    { name: 'CCS', score: 1380, mode: 'COPA VE', veh: 'ENCAVA' },
+    { name: 'CCS', score: 1380, mode: S_COPA, veh: S_ENC },
   ];
 
   async function loadLeaderboard() {
@@ -197,7 +199,7 @@ const CABINET_KEYS = {
       id: 'malibu',
       name: 'POR PUESTO',
       sub: 'Malibú Clásico • Equilibrado',
-      hex: '#29b6f6',
+      hex: C_B6F6,
       accent: 0x29b6f6,
       maxSpd: 615,
       accel: 410,
@@ -227,7 +229,7 @@ const CABINET_KEYS = {
       id: 'encava',
       name: 'LA ENCAVA',
       sub: 'ENT-610 El Pelotero • Veloz',
-      hex: '#f06292',
+      hex: C_6292,
       accent: 0xf06292,
       maxSpd: 630,
       accel: 360,
@@ -242,7 +244,7 @@ const CABINET_KEYS = {
       id: 'machito',
       name: 'EL MACHITO 4x4',
       sub: 'Serie 70 Vinotinto • Todo Terreno',
-      hex: '#e53935',
+      hex: C_3935,
       accent: 0xe53935,
       maxSpd: 610,
       accel: 395,
@@ -256,13 +258,13 @@ const CABINET_KEYS = {
   ];
 
   const ITEMS = [
-    { id: 'mango', asset: 'item_mango', short: 'MANGO BAJITO', col: '#ffb700', desc: '¡RESCATA PISO!' },
-    { id: 'arepa', asset: 'item_arepa', short: 'AREPA VOLADORA', col: '#f5deb3', desc: 'Disparo frontal' },
-    { id: 'reina', asset: 'item_reina', short: 'REINA PEPIADA', col: '#76ff03', desc: 'Persigue al rival' },
-    { id: 'malta', asset: 'item_malta', short: 'MALTA TURBO', col: '#ff9800', desc: '¡Súper Turbo!' },
-    { id: 'fiscal', asset: 'item_fiscal', short: 'EL FISCAL', col: '#00b0ff', desc: 'Persigue al 1° lugar' },
-    { id: 'bajon', asset: 'item_bajon', short: 'BAJÓN LUZ', col: '#00e5ff', desc: '¡CSM SE FUE LA LUZ!' },
-    { id: 'alma', asset: 'item_alma', short: 'ESTRELLA VE', col: '#ffe600', desc: 'Invencible + Velocidad' },
+    { id: S_MANGO, asset: 'item_mango', short: 'MANGO BAJITO', col: '#ffb700', desc: '¡RESCATA PISO!' },
+    { id: S_AREPA, asset: 'item_arepa', short: 'AREPA VOLADORA', col: '#f5deb3', desc: 'Disparo frontal' },
+    { id: S_REINA, asset: 'item_reina', short: 'REINA PEPIADA', col: '#76ff03', desc: 'Persigue al rival' },
+    { id: S_MALTA, asset: 'item_malta', short: 'MALTA TURBO', col: '#ff9800', desc: '¡Súper Turbo!' },
+    { id: S_FISC, asset: 'item_fiscal', short: 'EL FISCAL', col: '#00b0ff', desc: 'Persigue al 1° lugar' },
+    { id: S_BAJON, asset: 'item_bajon', short: 'BAJÓN LUZ', col: C_CYAN, desc: '¡CSM SE FUE LA LUZ!' },
+    { id: S_ALMA, asset: 'item_alma', short: 'ESTRELLA VE', col: C_YELLOW, desc: 'Invencible + Velocidad' },
   ];
 
   const ITEM_MAP = {};
@@ -272,7 +274,7 @@ const CABINET_KEYS = {
     {
       id: 'gp',
       name: 'COPA VENEZUELA (GP)',
-      short: 'COPA VE',
+      short: S_COPA,
       desc: 'Carrera 3D a 3 vueltas por Caracas, Maracaibo, Los Llanos y el Salto Ángel.',
       laps: 3,
     },
@@ -321,10 +323,10 @@ const CABINET_KEYS = {
   }
 
   const ZONES = [
-    { name: 'CARACAS • EL ÁVILA', sky: 'sky_0', g1: '#11381f', g2: '#0d2b18', col: '#39ff14' },
-    { name: 'PUENTE DE MARACAIBO', sky: 'sky_1', g1: '#0c2c3d', g2: '#081f2c', col: '#00e5ff' },
-    { name: 'LOS LLANOS • SABANA', sky: 'sky_2', g1: '#2d2912', g2: '#211d0b', col: '#ffab00' },
-    { name: 'CANAIMA • SALTO ÁNGEL', sky: 'sky_3', g1: '#0e3628', g2: '#09261c', col: '#ff6ec7' },
+    { name: 'CARACAS • EL ÁVILA', sky: 'sky_0', g1: '#11381f', g2: '#0d2b18', col: C_GREEN },
+    { name: 'PUENTE DE MARACAIBO', sky: 'sky_1', g1: C_2C3D, g2: '#081f2c', col: C_CYAN },
+    { name: 'LOS LLANOS • SABANA', sky: 'sky_2', g1: '#2d2912', g2: '#211d0b', col: C_AB00 },
+    { name: 'CANAIMA • SALTO ÁNGEL', sky: 'sky_3', g1: '#0e3628', g2: '#09261c', col: C_6EC7 },
   ];
 
   function buildAllPixelAssets() {
@@ -332,7 +334,7 @@ const CABINET_KEYS = {
 
     const drawTree = (px, disc, tx, by, crownCol1, crownCol2, hiCol) => {
       px(tx - 3, by - 28, 6, 28, '#3e2723');
-      disc(tx, by - 40, 20, 18, '#090d16');
+      disc(tx, by - 40, 20, 18, C_DARK);
       disc(tx - 6, by - 38, 13, 12, crownCol1);
       disc(tx + 6, by - 38, 13, 12, crownCol1);
       disc(tx, by - 44, 16, 14, crownCol2);
@@ -340,36 +342,36 @@ const CABINET_KEYS = {
     };
 
     const drawGreenSign = (px, sx, sy) => {
-      px(sx + 10, sy + 28, 5, 34, '#94a3b8');
-      px(sx + 65, sy + 28, 5, 34, '#94a3b8');
-      px(sx - 2, sy - 2, 84, 34, '#090d16');
-      px(sx, sy, 80, 30, '#f8fafc');
+      px(sx + 10, sy + 28, 5, 34, C_SLATE);
+      px(sx + 65, sy + 28, 5, 34, C_SLATE);
+      px(sx - 2, sy - 2, 84, 34, C_DARK);
+      px(sx, sy, 80, 30, C_FAFC);
       px(sx + 2, sy + 2, 76, 26, '#007a33');
-      px(sx + 4, sy + 4, 72, 3, '#ffd700');
-      px(sx + 6, sy + 10, 42, 4, '#ffffff');
-      px(sx + 6, sy + 17, 54, 3, '#fde047');
-      px(sx + 6, sy + 22, 36, 3, '#e2e8f0');
-      px(sx + 64, sy + 10, 6, 12, '#ffffff');
-      px(sx + 61, sy + 13, 12, 4, '#ffffff');
+      px(sx + 4, sy + 4, 72, 3, C_D700);
+      px(sx + 6, sy + 10, 42, 4, C_WHITE);
+      px(sx + 6, sy + 17, 54, 3, C_E047);
+      px(sx + 6, sy + 22, 36, 3, C_LIGHT);
+      px(sx + 64, sy + 10, 6, 12, C_WHITE);
+      px(sx + 61, sy + 13, 12, 4, C_WHITE);
     };
 
     // 1A. ZONA 0 — CARACAS • EL ÁVILA • TELEFÉRICO • ESFERA DE SOTO • PARQUE CENTRAL (800x300)
     ASSETS.sky_0 = createPixelCanvas(800, 300, (ctx, px, disc) => {
       const g = ctx.createLinearGradient(0, 0, 0, 300);
-      g.addColorStop(0, '#070b1a');
-      g.addColorStop(0.5, '#111b38');
+      g.addColorStop(0, C_0B1A);
+      g.addColorStop(0.5, C_1B38);
       g.addColorStop(1, '#26324d');
       ctx.fillStyle = g;
       ctx.fillRect(0, 0, 800, 300);
 
       for (let i = 0; i < 45; i++) {
-        px((i * 137) % 800, (i * 53) % 115, i % 4 === 0 ? 2 : 1, i % 4 === 0 ? 2 : 1, '#e2e8f0');
+        px((i * 137) % 800, (i * 53) % 115, i % 4 === 0 ? 2 : 1, i % 4 === 0 ? 2 : 1, C_LIGHT);
       }
-      disc(510, 50, 24, 24, '#e2e8f0');
-      disc(504, 46, 5, 4, '#cbd5e1');
+      disc(510, 50, 24, 24, C_LIGHT);
+      disc(504, 46, 5, 4, C_MUTED);
 
       // Silueta de El Ávila
-      ctx.fillStyle = '#0f231e';
+      ctx.fillStyle = C_231E;
       ctx.beginPath();
       ctx.moveTo(0, 300);
       for (const [x, y] of [[0, 190], [110, 128], [220, 96], [340, 148], [470, 112], [610, 154], [730, 126], [800, 185]]) {
@@ -381,8 +383,8 @@ const CABINET_KEYS = {
       // Hotel Humboldt en la cima del Ávila + Guaya y Cabinas del Teleférico
       px(214, 58, 14, 46, '#b45309');
       px(216, 60, 10, 42, '#f59e0b');
-      px(212, 72, 18, 5, '#fef08a');
-      px(220, 42, 2, 16, '#f8fafc');
+      px(212, 72, 18, 5, C_F08A);
+      px(220, 42, 2, 16, C_FAFC);
       ctx.strokeStyle = 'rgba(226,232,240,0.65)';
       ctx.lineWidth = 1.5;
       ctx.beginPath();
@@ -390,9 +392,9 @@ const CABINET_KEYS = {
       ctx.lineTo(220, 66);
       ctx.lineTo(440, 175);
       ctx.stroke();
-      for (const [cx, cy, col] of [[110, 145, '#ef4444'], [168, 104, '#facc15'], [315, 118, '#ef4444']]) {
-        px(cx, cy - 6, 2, 6, '#e2e8f0');
-        px(cx - 7, cy, 16, 10, '#090d16');
+      for (const [cx, cy, col] of [[110, 145, C_4444], [168, 104, C_CC15], [315, 118, C_4444]]) {
+        px(cx, cy - 6, 2, 6, C_LIGHT);
+        px(cx - 7, cy, 16, 10, C_DARK);
         px(cx - 6, cy + 1, 14, 8, col);
         px(cx - 4, cy + 2, 10, 4, '#bae6fd');
       }
@@ -408,25 +410,25 @@ const CABINET_KEYS = {
         px(bx + 2, by + 2, bw - 4, bh - 2, bCol);
         for (let wy = by + 8; wy < 278; wy += 9) {
           for (let wx = bx + 6; wx < bx + bw - 8; wx += 8) {
-            if ((wx + wy) % 3 !== 0) px(wx, wy, 4, 4, '#fde047');
+            if ((wx + wy) % 3 !== 0) px(wx, wy, 4, 4, C_E047);
           }
         }
       }
       // Antenas de Parque Central
-      px(260, 130, 2, 24, '#e2e8f0');
-      px(312, 130, 2, 24, '#e2e8f0');
+      px(260, 130, 2, 24, C_LIGHT);
+      px(312, 130, 2, 24, C_LIGHT);
 
       // Esfera de Jesús Soto (estructura blanca + esfera óptica naranja/amarilla con líneas)
-      px(142, 236, 48, 60, '#e2e8f0');
-      px(146, 240, 40, 56, '#111b38');
+      px(142, 236, 48, 60, C_LIGHT);
+      px(146, 240, 40, 56, C_1B38);
       disc(166, 268, 20, 20, 'rgba(255,109,0,0.3)');
       for (let x = 150; x <= 182; x += 3) {
         const dx = (x - 166) / 17;
         const hh = M_round(M_sqrt(M_max(0, 1 - dx * dx)) * 17);
-        px(x, 268 - hh, 2, hh * 2, x % 6 === 0 ? '#fde047' : '#ff6d00');
+        px(x, 268 - hh, 2, hh * 2, x % 6 === 0 ? C_E047 : '#ff6d00');
       }
 
-      drawTree(px, disc, 492, 296, '#143818', '#1b5e20', '#43a047');
+      drawTree(px, disc, 492, 296, C_3818, C_5E20, C_A047);
       drawGreenSign(px, 706, 236);
       px(0, 295, 800, 5, '#091410');
     });
@@ -437,13 +439,13 @@ const CABINET_KEYS = {
       g.addColorStop(0, '#09061c');
       g.addColorStop(0.55, '#1e1342');
       g.addColorStop(0.82, '#3b1d5e');
-      g.addColorStop(1, '#0c2c3d');
+      g.addColorStop(1, C_2C3D);
       ctx.fillStyle = g;
       ctx.fillRect(0, 0, 800, 300);
 
       // Relámpago del Catatumbo iluminando el cielo zuliano
       disc(620, 78, 70, 28, 'rgba(0, 229, 255, 0.22)');
-      ctx.strokeStyle = '#7ef9ff';
+      ctx.strokeStyle = C_F9FF;
       ctx.lineWidth = 2.5;
       ctx.beginPath();
       ctx.moveTo(620, 32);
@@ -455,13 +457,13 @@ const CABINET_KEYS = {
       // Agua del Lago de Maracaibo al fondo con reflejos dorados
       px(0, 246, 800, 50, '#082032');
       for (let rx = 20; rx < 780; rx += 55) {
-        px(rx, 258 + (rx % 14), 28, 2, '#38bdf8');
-        px(rx + 10, 272 + (rx % 10), 22, 2, '#facc15');
+        px(rx, 258 + (rx % 14), 28, 2, C_BDF8);
+        px(rx + 10, 272 + (rx % 10), 22, 2, C_CC15);
       }
 
       // Pilones de concreto y guayas del Puente Gral. Rafael Urdaneta
       const towers = [110, 275, 440, 605];
-      ctx.strokeStyle = '#94a3b8';
+      ctx.strokeStyle = C_SLATE;
       ctx.lineWidth = 1.5;
       for (const tx of towers) {
         for (const off of [-68, -44, -22, 22, 44, 68]) {
@@ -471,17 +473,17 @@ const CABINET_KEYS = {
           ctx.stroke();
         }
         // Pila en A del puente
-        px(tx - 14, 120, 8, 136, '#cbd5e1');
-        px(tx + 6, 120, 8, 136, '#94a3b8');
-        px(tx - 16, 118, 32, 8, '#e2e8f0');
-        px(tx - 12, 162, 24, 6, '#cbd5e1');
-        px(tx - 12, 202, 24, 6, '#cbd5e1');
-        px(tx - 3, 112, 6, 6, '#ff1744');
+        px(tx - 14, 120, 8, 136, C_MUTED);
+        px(tx + 6, 120, 8, 136, C_SLATE);
+        px(tx - 16, 118, 32, 8, C_LIGHT);
+        px(tx - 12, 162, 24, 6, C_MUTED);
+        px(tx - 12, 202, 24, 6, C_MUTED);
+        px(tx - 3, 112, 6, 6, C_RED);
       }
       // Tablero vial del puente sobre el lago
       px(0, 228, 800, 10, '#475569');
-      px(0, 230, 800, 3, '#f8fafc');
-      for (let lx = 16; lx < 790; lx += 32) px(lx, 224, 4, 4, '#fde047');
+      px(0, 230, 800, 3, C_FAFC);
+      for (let lx = 16; lx < 790; lx += 32) px(lx, 224, 4, 4, C_E047);
 
       drawGreenSign(px, 706, 236);
       px(0, 295, 800, 5, '#061520');
@@ -493,13 +495,13 @@ const CABINET_KEYS = {
       g.addColorStop(0, '#2b091c');
       g.addColorStop(0.42, '#881337');
       g.addColorStop(0.75, '#ea580c');
-      g.addColorStop(1, '#facc15');
+      g.addColorStop(1, C_CC15);
       ctx.fillStyle = g;
       ctx.fillRect(0, 0, 800, 300);
 
       // Sol gigante de los Llanos
       disc(400, 198, 66, 66, 'rgba(253, 224, 71, 0.28)');
-      disc(400, 198, 48, 48, '#fef08a');
+      disc(400, 198, 48, 48, C_F08A);
 
       // Sabana y esteros al horizonte
       px(0, 258, 800, 42, '#3b240b');
@@ -507,7 +509,7 @@ const CABINET_KEYS = {
 
       // Araguaneyes amarillos y palmas de moriche
       for (const ax of [68, 230, 555]) {
-        drawTree(px, disc, ax, 294, '#ca8a04', '#eab308', '#fef08a');
+        drawTree(px, disc, ax, 294, '#ca8a04', '#eab308', C_F08A);
       }
       for (const mx of [145, 330, 645]) {
         px(mx - 2, 232, 5, 62, '#451a03');
@@ -518,10 +520,10 @@ const CABINET_KEYS = {
 
       // Chigüires en la sabana
       for (const cx of [280, 470]) {
-        disc(cx, 282, 13, 9, '#090d16');
-        disc(cx, 282, 11, 7, '#8d5524');
+        disc(cx, 282, 13, 9, C_DARK);
+        disc(cx, 282, 11, 7, C_5524);
         disc(cx + 9, 278, 7, 6, '#a16207');
-        px(cx + 12, 276, 2, 2, '#090d16');
+        px(cx + 12, 276, 2, 2, C_DARK);
       }
 
       drawGreenSign(px, 706, 236);
@@ -545,7 +547,7 @@ const CABINET_KEYS = {
         [520, 124, 180, '#3b1c32', '#581c4f'],
       ];
       for (const [tx, ty, tw, c1, c2] of tepuys) {
-        px(tx - 8, ty, tw + 16, 300 - ty, '#090d16');
+        px(tx - 8, ty, tw + 16, 300 - ty, C_DARK);
         px(tx, ty + 4, tw, 300 - ty, c1);
         px(tx + 8, ty + 4, tw - 16, 10, '#15803d');
         for (let sy = ty + 24; sy < 280; sy += 22) {
@@ -555,14 +557,14 @@ const CABINET_KEYS = {
 
       // Cascada del Salto Ángel cayendo desde el Auyántepuy central + bruma
       px(348, 86, 18, 198, 'rgba(186, 230, 253, 0.45)');
-      px(352, 86, 10, 198, '#f8fafc');
-      px(355, 86, 4, 198, '#38bdf8');
+      px(352, 86, 10, 198, C_FAFC);
+      px(355, 86, 4, 198, C_BDF8);
       disc(357, 278, 46, 16, 'rgba(224, 242, 254, 0.75)');
-      disc(357, 282, 28, 10, '#ffffff');
+      disc(357, 282, 28, 10, C_WHITE);
 
       // Laguna de Canaima y palmas de moriche
       px(0, 278, 800, 20, '#7c2d12');
-      px(120, 284, 520, 8, '#38bdf8');
+      px(120, 284, 520, 8, C_BDF8);
       drawTree(px, disc, 195, 294, '#064e3b', '#047857', '#34d399');
       drawTree(px, disc, 505, 294, '#064e3b', '#047857', '#34d399');
 
@@ -572,10 +574,10 @@ const CABINET_KEYS = {
 
     // 2. MOJÓN REFLECTIVO + CARTEL VIAL VERDE VENEZOLANO DE AUTOPISTA
     ASSETS.prop_post = createPixelCanvas(16, 36, (ctx, px) => {
-      px(4, 4, 8, 30, '#090d16');
-      px(5, 6, 6, 26, '#cbd5e1');
-      px(5, 9, 6, 7, '#ef4444');
-      px(6, 11, 4, 3, '#fef08a');
+      px(4, 4, 8, 30, C_DARK);
+      px(5, 6, 6, 26, C_MUTED);
+      px(5, 9, 6, 7, C_4444);
+      px(6, 11, 4, 3, C_F08A);
     });
 
     ASSETS.prop_sign = createPixelCanvas(84, 64, (ctx, px) => {
@@ -586,118 +588,118 @@ const CABINET_KEYS = {
     for (let f = 0; f < 2; f++) {
       ASSETS['item_box_' + f] = createPixelCanvas(36, 36, (ctx, px) => {
         // Sombra exterior y borde negro grueso de cubo biselado
-        px(4, 2, 28, 32, '#090d16');
-        px(2, 4, 32, 28, '#090d16');
+        px(4, 2, 28, 32, C_DARK);
+        px(2, 4, 32, 28, C_DARK);
         // Cara superior en perspectiva 3D
-        px(6, 4, 24, 6, f === 0 ? '#fef08a' : '#7ef9ff');
-        px(8, 5, 20, 4, '#ffd700');
+        px(6, 4, 24, 6, f === 0 ? C_F08A : C_F9FF);
+        px(8, 5, 20, 4, C_D700);
         // Cuerpo frontal del cubo con franjas luminosas venezolanas y bisel metálico
-        px(5, 10, 26, 22, '#1e293b');
+        px(5, 10, 26, 22, C_293B);
         px(7, 11, 22, 6, '#eab308');
         px(7, 17, 22, 7, '#1d4ed8');
         px(7, 24, 22, 6, '#dc2626');
         // Marco interior brillante
-        px(6, 10, 24, 2, '#ffffff');
-        px(6, 10, 2, 20, '#ffffff');
-        px(28, 10, 2, 20, '#94a3b8');
-        px(6, 29, 24, 2, '#94a3b8');
+        px(6, 10, 24, 2, C_WHITE);
+        px(6, 10, 2, 20, C_WHITE);
+        px(28, 10, 2, 20, C_SLATE);
+        px(6, 29, 24, 2, C_SLATE);
         // Signo "?" pixel-art nítido en el centro con sombra
-        px(14, 13, 9, 3, '#090d16');
-        px(20, 15, 4, 5, '#090d16');
-        px(16, 18, 6, 4, '#090d16');
-        px(16, 24, 5, 4, '#090d16');
+        px(14, 13, 9, 3, C_DARK);
+        px(20, 15, 4, 5, C_DARK);
+        px(16, 18, 6, 4, C_DARK);
+        px(16, 24, 5, 4, C_DARK);
 
-        px(13, 12, 9, 3, '#ffffff');
-        px(19, 14, 4, 5, '#ffffff');
-        px(15, 17, 6, 4, '#ffffff');
-        px(15, 23, 5, 4, f === 0 ? '#ffffff' : '#fef08a');
+        px(13, 12, 9, 3, C_WHITE);
+        px(19, 14, 4, 5, C_WHITE);
+        px(15, 17, 6, 4, C_WHITE);
+        px(15, 23, 5, 4, f === 0 ? C_WHITE : C_F08A);
       });
     }
 
     // 4. PODERES VENEZOLANOS EN PIXEL-ART REDONDEADO Y DETALLADO (28x28)
     ASSETS.item_arepa = createPixelCanvas(28, 28, (ctx, px, disc) => {
-      disc(14, 14, 12, 10, '#090d16');
+      disc(14, 14, 12, 10, C_DARK);
       disc(14, 15, 10, 8, '#c68642');
       disc(14, 13, 10, 8, '#f5deb3');
       disc(14, 12, 8, 6, '#fff3d1');
-      px(6, 13, 16, 3, '#ffffff');
+      px(6, 13, 16, 3, C_WHITE);
       px(8, 15, 12, 2, '#fff9c4');
-      px(10, 9, 8, 2, '#8d5524');
-      px(9, 12, 10, 1, '#8d5524');
-      px(11, 16, 6, 1, '#8d5524');
+      px(10, 9, 8, 2, C_5524);
+      px(9, 12, 10, 1, C_5524);
+      px(11, 16, 6, 1, C_5524);
     });
 
     ASSETS.item_reina = createPixelCanvas(28, 28, (ctx, px, disc) => {
-      disc(14, 14, 12, 10, '#090d16');
+      disc(14, 14, 12, 10, C_DARK);
       disc(14, 16, 10, 7, '#d99b66');
       disc(14, 14, 11, 6, '#64dd17');
-      disc(11, 14, 3, 2, '#ffd600');
-      disc(17, 15, 3, 2, '#ffd600');
-      disc(14, 13, 2, 2, '#ffffff');
+      disc(11, 14, 3, 2, C_D600);
+      disc(17, 15, 3, 2, C_D600);
+      disc(14, 13, 2, 2, C_WHITE);
       disc(14, 10, 10, 6, '#f5deb3');
-      px(10, 8, 8, 2, '#8d5524');
-      px(11, 11, 6, 1, '#8d5524');
+      px(10, 8, 8, 2, C_5524);
+      px(11, 11, 6, 1, C_5524);
     });
 
     ASSETS.item_mango = createPixelCanvas(28, 28, (ctx, px, disc) => {
-      disc(14, 16, 10, 9, '#090d16');
-      disc(17, 19, 6, 5, '#090d16');
+      disc(14, 16, 10, 9, C_DARK);
+      disc(17, 19, 6, 5, C_DARK);
       disc(13, 15, 8, 7, '#ff9100');
-      disc(12, 13, 6, 5, '#ff1744');
-      disc(16, 18, 5, 4, '#ffd600');
-      disc(11, 12, 2, 2, '#ffffff');
+      disc(12, 13, 6, 5, C_RED);
+      disc(16, 18, 5, 4, C_D600);
+      disc(11, 12, 2, 2, C_WHITE);
       px(13, 4, 2, 4, '#3e2723');
       disc(18, 6, 5, 2, '#2e7d32');
       disc(18, 6, 3, 1, '#69f0ae');
     });
 
     ASSETS.item_malta = createPixelCanvas(28, 28, (ctx, px, disc) => {
-      px(10, 2, 8, 3, '#ffd700');
-      px(10, 5, 8, 5, '#090d16');
+      px(10, 2, 8, 3, C_D700);
+      px(10, 5, 8, 5, C_DARK);
       px(11, 5, 6, 5, '#4e2708');
-      disc(14, 18, 7, 8, '#090d16');
-      px(8, 10, 12, 15, '#090d16');
+      disc(14, 18, 7, 8, C_DARK);
+      px(8, 10, 12, 15, C_DARK);
       px(9, 11, 10, 13, '#3b1a04');
       px(9, 14, 10, 6, '#e6192e');
-      disc(14, 17, 4, 2, '#ffd700');
+      disc(14, 17, 4, 2, C_D700);
       px(12, 16, 4, 2, '#0044cc');
       px(10, 11, 2, 11, 'rgba(255,255,255,0.35)');
     });
 
     ASSETS.item_fiscal = createPixelCanvas(28, 28, (ctx, px) => {
-      px(9, 2, 10, 5, '#090d16');
-      px(10, 3, 4, 3, '#ff1744');
-      px(14, 3, 4, 3, '#00e5ff');
+      px(9, 2, 10, 5, C_DARK);
+      px(10, 3, 4, 3, C_RED);
+      px(14, 3, 4, 3, C_CYAN);
       for (let y = 7; y <= 22; y++) {
         const hw = 3 + M_floor(((y - 7) / 15) * 7);
-        px(14 - hw - 1, y, (hw + 1) * 2, 1, '#090d16');
+        px(14 - hw - 1, y, (hw + 1) * 2, 1, C_DARK);
         const st = (y >= 11 && y <= 13) || (y >= 17 && y <= 19);
-        px(14 - hw, y, hw * 2, 1, st ? '#ffffff' : '#ff6d00');
+        px(14 - hw, y, hw * 2, 1, st ? C_WHITE : '#ff6d00');
       }
-      px(3, 22, 22, 4, '#090d16');
+      px(3, 22, 22, 4, C_DARK);
       px(4, 23, 20, 2, '#ff6d00');
     });
 
     ASSETS.item_bajon = createPixelCanvas(28, 28, (ctx, px) => {
-      px(12, 2, 10, 7, '#090d16');
-      px(7, 8, 14, 6, '#090d16');
-      px(9, 13, 12, 6, '#090d16');
-      px(6, 18, 10, 8, '#090d16');
-      px(13, 3, 8, 5, '#00e5ff');
-      px(8, 9, 12, 4, '#ffe600');
-      px(10, 14, 10, 4, '#ffe600');
-      px(7, 19, 7, 6, '#00e5ff');
+      px(12, 2, 10, 7, C_DARK);
+      px(7, 8, 14, 6, C_DARK);
+      px(9, 13, 12, 6, C_DARK);
+      px(6, 18, 10, 8, C_DARK);
+      px(13, 3, 8, 5, C_CYAN);
+      px(8, 9, 12, 4, C_YELLOW);
+      px(10, 14, 10, 4, C_YELLOW);
+      px(7, 19, 7, 6, C_CYAN);
     });
 
     ASSETS.item_alma = createPixelCanvas(28, 28, (ctx, px, disc) => {
-      disc(14, 14, 11, 11, '#090d16');
-      px(11, 2, 6, 24, '#090d16');
-      px(2, 10, 24, 8, '#090d16');
-      px(12, 3, 4, 7, '#ffd700');
+      disc(14, 14, 11, 11, C_DARK);
+      px(11, 2, 6, 24, C_DARK);
+      px(2, 10, 24, 8, C_DARK);
+      px(12, 3, 4, 7, C_D700);
       px(4, 11, 20, 5, '#0055ff');
       px(6, 16, 16, 7, '#e6192e');
-      px(11, 12, 2, 3, '#ffffff');
-      px(15, 12, 2, 3, '#ffffff');
+      px(11, 12, 2, 3, C_WHITE);
+      px(15, 12, 2, 3, C_WHITE);
     });
 
     // 5. VEHÍCULOS PIXEL-ART 16-BIT ESTILO JAVA RETRO (72x50, 3 VISTAS FLUIDAS _l / _c / _r SIN CAJAS SALIENTES)
@@ -713,55 +715,55 @@ const CABINET_KEYS = {
         const sTop = d * 3;
         const sMid = d * 2;
         // Cauchos traseros anchos y rueda delantera asomándose suavemente al girar
-        if (d < 0) px(8, 28, 5, 12, '#090d16');
-        if (d > 0) px(59, 28, 5, 12, '#090d16');
-        px(10, 34, 13, 14, '#090d16');
-        px(49, 34, 13, 14, '#090d16');
-        px(12, 36, 9, 10, '#1e293b');
-        px(51, 36, 9, 10, '#1e293b');
+        if (d < 0) px(8, 28, 5, 12, C_DARK);
+        if (d > 0) px(59, 28, 5, 12, C_DARK);
+        px(10, 34, 13, 14, C_DARK);
+        px(49, 34, 13, 14, C_DARK);
+        px(12, 36, 9, 10, C_293B);
+        px(51, 36, 9, 10, C_293B);
 
         // Sombra y contorno aerodinámico de cabina y guardafangos
-        disc(36 + sTop, 19, 19, 10, '#090d16');
-        disc(36 + sMid, 31, 27, 12, '#090d16');
-        px(10 + sMid, 26, 52, 16, '#090d16');
+        disc(36 + sTop, 19, 19, 10, C_DARK);
+        disc(36 + sMid, 31, 27, 12, C_DARK);
+        px(10 + sMid, 26, 52, 16, C_DARK);
 
         // Retrovisores laterales
-        px(13 + sTop, 20, 5, 3, '#090d16');
-        px(54 + sTop, 20, 5, 3, '#090d16');
+        px(13 + sTop, 20, 5, 3, C_DARK);
+        px(54 + sTop, 20, 5, 3, C_DARK);
         px(14 + sTop, 21, 3, 2, '#7dd3fc');
         px(55 + sTop, 21, 3, 2, '#7dd3fc');
 
         // Techo y parabrisas trasero con brillo diagonal
-        disc(36 + sTop, 19, 17, 8, '#38bdf8');
+        disc(36 + sTop, 19, 17, 8, C_BDF8);
         disc(36 + sTop, 20, 14, 6, '#1e3a5f');
-        px(25 + sTop, 17, 22, 6, '#0f172a');
+        px(25 + sTop, 17, 22, 6, C_172A);
         px(27 + sTop, 18, 8, 2, '#7dd3fc');
-        px(29 + sTop, 15, 14, 2, '#fde047');
+        px(29 + sTop, 15, 14, 2, C_E047);
 
         // Maletera y carrocería celeste sombreada
         px(12 + sMid, 24, 48, 15, '#0284c7');
-        px(14 + sMid, 23, 44, 5, '#38bdf8');
+        px(14 + sMid, 23, 44, 5, C_BDF8);
         px(18 + sMid, 23, 36, 2, '#bae6fd');
         px(12 + sMid, 33, 48, 6, '#0369a1');
 
         // Faros traseros rojos esculpidos + tercer stop central
-        px(29 + sMid, 26, 14, 2, '#ef4444');
+        px(29 + sMid, 26, 14, 2, C_4444);
         px(13 + sMid, 27, 9, 6, '#7f1d1d');
         px(50 + sMid, 27, 9, 6, '#7f1d1d');
-        px(14 + sMid, 28, 7, 4, '#ff1744');
-        px(51 + sMid, 28, 7, 4, '#ff1744');
-        px(16 + sMid, 29, 3, 2, '#fde047');
-        px(53 + sMid, 29, 3, 2, '#fde047');
+        px(14 + sMid, 28, 7, 4, C_RED);
+        px(51 + sMid, 28, 7, 4, C_RED);
+        px(16 + sMid, 29, 3, 2, C_E047);
+        px(53 + sMid, 29, 3, 2, C_E047);
 
         // Placa venezolana y difusor inferior con doble escape
-        px(11 + sMid, 37, 50, 6, '#0f172a');
-        px(28 + sMid, 35, 16, 5, '#f8fafc');
+        px(11 + sMid, 37, 50, 6, C_172A);
+        px(28 + sMid, 35, 16, 5, C_FAFC);
         px(28 + sMid, 35, 16, 1, '#1d4ed8');
-        px(30 + sMid, 37, 12, 2, '#334155');
+        px(30 + sMid, 37, 12, 2, C_4155);
         px(15 + sMid, 39, 6, 3, '#64748b');
         px(51 + sMid, 39, 6, 3, '#64748b');
-        px(16 + sMid, 40, 4, 2, '#090d16');
-        px(52 + sMid, 40, 4, 2, '#090d16');
+        px(16 + sMid, 40, 4, 2, C_DARK);
+        px(52 + sMid, 40, 4, 2, C_DARK);
       });
 
       // 5B. MOTORIZADO BERA SBR 150 + CASCO SANDOVAL (Se inclina con fluidez en las curvas)
@@ -769,35 +771,35 @@ const CABINET_KEYS = {
         const lean = d * 5;
         if (d !== 0) {
           const fx = 36 + d * 10;
-          px(fx - 3, 30, 7, 13, '#090d16');
-          px(fx - 1, 32, 3, 9, '#94a3b8');
-          px(fx - 2, 21, 4, 10, '#cbd5e1');
-          px(fx + d * 2 - 2, 18, 4, 4, '#ffe600');
+          px(fx - 3, 30, 7, 13, C_DARK);
+          px(fx - 1, 32, 3, 9, C_SLATE);
+          px(fx - 2, 21, 4, 10, C_MUTED);
+          px(fx + d * 2 - 2, 18, 4, 4, C_YELLOW);
         }
-        disc(36 + lean, 9, 7, 5, '#090d16');
+        disc(36 + lean, 9, 7, 5, C_DARK);
         disc(36 + lean, 9, 6, 4, '#1c1c1c');
         px(34 + lean, 6, 4, 2, '#64748b');
         px(30 + lean, 13, 12, 4, '#d99b66');
         px(33 + lean, 16, 6, 3, '#c68642');
-        px(20 + lean, 17, 5, 3, '#090d16');
-        px(47 + lean, 17, 5, 3, '#090d16');
-        px(22 + lean, 22, 28, 2, '#cbd5e1');
+        px(20 + lean, 17, 5, 3, C_DARK);
+        px(47 + lean, 17, 5, 3, C_DARK);
+        px(22 + lean, 22, 28, 2, C_MUTED);
         px(23 + lean, 20, 5, 4, '#d99b66');
         px(44 + lean, 20, 5, 4, '#d99b66');
-        px(28 + lean, 18, 16, 11, '#090d16');
+        px(28 + lean, 18, 16, 11, C_DARK);
         px(29 + lean, 19, 14, 9, '#212121');
-        px(31 + lean, 21, 10, 2, '#ffd700');
+        px(31 + lean, 21, 10, 2, C_D700);
         px(31 + lean, 23, 10, 2, '#0055ff');
         px(31 + lean, 25, 10, 2, '#e6192e');
         px(27 + d * 2, 28, 5, 10, '#0d47a1');
         px(40 + d * 2, 28, 5, 10, '#0d47a1');
-        px(29, 27, 14, 4, '#090d16');
+        px(29, 27, 14, 4, C_DARK);
         px(30, 26, 12, 6, '#0088ff');
-        px(33, 28, 6, 3, '#ff1744');
-        px(40, 35, 5, 6, '#e2e8f0');
-        px(31, 32, 2, 7, '#ffd600');
-        px(39, 32, 2, 7, '#ffd600');
-        px(32, 31, 8, 16, '#090d16');
+        px(33, 28, 6, 3, C_RED);
+        px(40, 35, 5, 6, C_LIGHT);
+        px(31, 32, 2, 7, C_D600);
+        px(39, 32, 2, 7, C_D600);
+        px(32, 31, 8, 16, C_DARK);
         px(34, 33, 4, 12, '#37474f');
       });
 
@@ -807,46 +809,46 @@ const CABINET_KEYS = {
         const sMid = d * 1.5;
 
         // Ruedas dobles traseras
-        px(13, 36, 12, 12, '#090d16');
-        px(47, 36, 12, 12, '#090d16');
-        px(15, 38, 6, 8, '#94a3b8');
-        px(51, 38, 6, 8, '#94a3b8');
+        px(13, 36, 12, 12, C_DARK);
+        px(47, 36, 12, 12, C_DARK);
+        px(15, 38, 6, 8, C_SLATE);
+        px(51, 38, 6, 8, C_SLATE);
 
         // Techo abovedado y carrocería con esquinas redondeadas
-        disc(36 + sTop, 10, 22, 6, '#090d16');
-        px(13 + sMid, 8, 46, 32, '#090d16');
-        disc(36 + sTop, 10, 20, 4, '#f8fafc');
-        px(15 + sMid, 10, 42, 14, '#f8fafc');
+        disc(36 + sTop, 10, 22, 6, C_DARK);
+        px(13 + sMid, 8, 46, 32, C_DARK);
+        disc(36 + sTop, 10, 20, 4, C_FAFC);
+        px(15 + sMid, 10, 42, 14, C_FAFC);
         px(15 + sMid, 24, 42, 6, '#0055ff');
-        px(15 + sMid, 30, 42, 8, '#f06292');
+        px(15 + sMid, 30, 42, 8, C_6292);
 
         // Retrovisores altos de autobús
-        px(9 + sTop, 11, 4, 8, '#090d16');
-        px(59 + sTop, 11, 4, 8, '#090d16');
-        px(10 + sTop, 12, 2, 6, '#e2e8f0');
-        px(60 + sTop, 12, 2, 6, '#e2e8f0');
+        px(9 + sTop, 11, 4, 8, C_DARK);
+        px(59 + sTop, 11, 4, 8, C_DARK);
+        px(10 + sTop, 12, 2, 6, C_LIGHT);
+        px(60 + sTop, 12, 2, 6, C_LIGHT);
 
         // 5 luces de gálibo en el techo
         for (let x = 20; x <= 52; x += 8) {
-          px(x + sTop, 8, 3, 2, x === 36 ? '#39ff14' : '#ff3d00');
+          px(x + sTop, 8, 3, 2, x === 36 ? C_GREEN : '#ff3d00');
         }
 
         // Parabrisas trasero panorámico con calcomanía "EL PELOTERO"
-        px(18 + sTop, 12, 36, 11, '#0f172a');
+        px(18 + sTop, 12, 36, 11, C_172A);
         px(20 + sTop, 13, 12, 4, '#e6192e');
-        px(21 + sTop, 14, 10, 2, '#ffffff');
-        px(44 + sTop, 13, 7, 4, '#ffe600');
+        px(21 + sTop, 14, 10, 2, C_WHITE);
+        px(44 + sTop, 13, 7, 4, C_YELLOW);
         px(22 + sTop, 18, 28, 3, '#ff007f');
-        px(25 + sTop, 19, 22, 2, '#00e5ff');
+        px(25 + sTop, 19, 22, 2, C_CYAN);
 
         // Luces traseras triples + placa + parachoques cromado
-        px(16 + sMid, 31, 9, 5, '#ff1744');
-        px(47 + sMid, 31, 9, 5, '#ff1744');
-        px(25 + sMid, 31, 4, 5, '#ffab00');
-        px(43 + sMid, 31, 4, 5, '#ffab00');
-        px(32 + sMid, 31, 8, 5, '#ffffff');
-        px(13 + sMid, 37, 46, 4, '#cbd5e1');
-        px(15 + sMid, 38, 42, 2, '#f8fafc');
+        px(16 + sMid, 31, 9, 5, C_RED);
+        px(47 + sMid, 31, 9, 5, C_RED);
+        px(25 + sMid, 31, 4, 5, C_AB00);
+        px(43 + sMid, 31, 4, 5, C_AB00);
+        px(32 + sMid, 31, 8, 5, C_WHITE);
+        px(13 + sMid, 37, 46, 4, C_MUTED);
+        px(15 + sMid, 38, 42, 2, C_FAFC);
       });
 
       // 5D. EL MACHITO 4x4 SERIE 70 VINOTINTO (Guardafangos anchos, caucho de repuesto y snorkel sin cajas laterales)
@@ -855,38 +857,38 @@ const CABINET_KEYS = {
         const sMid = d * 2;
 
         // Cauchos 4x4 anchos con guardabarros
-        px(10, 32, 14, 16, '#090d16');
-        px(48, 32, 14, 16, '#090d16');
+        px(10, 32, 14, 16, C_DARK);
+        px(48, 32, 14, 16, C_DARK);
         px(13, 35, 7, 10, '#475569');
         px(52, 35, 7, 10, '#475569');
-        px(21, 38, 4, 5, '#facc15');
-        px(47, 38, 4, 5, '#facc15');
+        px(21, 38, 4, 5, C_CC15);
+        px(47, 38, 4, 5, C_CC15);
 
         // Parrilla de techo + Snorkel
-        px(51 + sTop, 6, 4, 18, '#090d16');
-        px(20 + sTop, 6, 32, 3, '#1e293b');
-        px(22 + sTop, 5, 7, 3, '#ff1744');
+        px(51 + sTop, 6, 4, 18, C_DARK);
+        px(20 + sTop, 6, 32, 3, C_293B);
+        px(22 + sTop, 5, 7, 3, C_RED);
         px(41 + sTop, 5, 7, 3, '#00b0ff');
 
         // Cabina y carrocería vinotinto con franja dorada
-        px(16 + sTop, 9, 40, 15, '#090d16');
-        px(12 + sMid, 22, 48, 16, '#090d16');
+        px(16 + sTop, 9, 40, 15, C_DARK);
+        px(12 + sMid, 22, 48, 16, C_DARK);
         px(18 + sTop, 11, 36, 13, '#881337');
         px(14 + sMid, 23, 44, 13, '#9f1239');
         px(14 + sMid, 25, 44, 2, '#fbbf24');
 
         // Ventanas traseras dobles de Machito
-        px(20 + sTop, 12, 15, 10, '#0f172a');
-        px(38 + sTop, 12, 14, 10, '#0f172a');
+        px(20 + sTop, 12, 15, 10, C_172A);
+        px(38 + sTop, 12, 14, 10, C_172A);
         px(22 + sTop, 14, 6, 2, '#7dd3fc');
 
         // Faros traseros, parachoques de hierro y caucho de repuesto
-        px(15 + sMid, 28, 8, 5, '#ff1744');
-        px(49 + sMid, 28, 8, 5, '#ff1744');
-        px(12 + sMid, 34, 48, 5, '#cbd5e1');
-        disc(41 + sMid, 27, 8, 8, '#090d16');
-        disc(41 + sMid, 27, 6, 6, '#1e293b');
-        disc(41 + sMid, 27, 3, 3, '#cbd5e1');
+        px(15 + sMid, 28, 8, 5, C_RED);
+        px(49 + sMid, 28, 8, 5, C_RED);
+        px(12 + sMid, 34, 48, 5, C_MUTED);
+        disc(41 + sMid, 27, 8, 8, C_DARK);
+        disc(41 + sMid, 27, 6, 6, C_293B);
+        disc(41 + sMid, 27, 3, 3, C_MUTED);
       });
     }
   }
@@ -916,7 +918,7 @@ const CABINET_KEYS = {
       return 440 * Math.pow(2, (m - 69) / 12);
     }
 
-    voice(freq, t0, dur, type = 'triangle', vol = 0.06, cut = 2600, endCut = 0) {
+    voice(freq, t0, dur, type = S_TRI, vol = 0.06, cut = 2600, endCut = 0) {
       if (this.muted || !this.ctx || freq <= 0) return;
       try {
         const o = this.ctx.createOscillator();
@@ -941,10 +943,10 @@ const CABINET_KEYS = {
     // Lead melódico brillante con doble oscilador desafinado + eco slapback estilo Mario Kart 64
     lead(midi, t0, dur, vol = 0.068) {
       const f = this.m2f(midi);
-      this.voice(f, t0, dur, 'sawtooth', vol * 0.65, 3600, 1300);
-      this.voice(f * 1.003, t0, dur, 'triangle', vol * 0.85, 3200, 1500);
-      this.voice(f * 2, t0, dur * 0.45, 'sine', vol * 0.3, 4200);
-      this.voice(f, t0 + 0.085, dur * 0.55, 'triangle', vol * 0.25, 1800);
+      this.voice(f, t0, dur, S_SAW, vol * 0.65, 3600, 1300);
+      this.voice(f * 1.003, t0, dur, S_TRI, vol * 0.85, 3200, 1500);
+      this.voice(f * 2, t0, dur * 0.45, S_SINE, vol * 0.3, 4200);
+      this.voice(f, t0 + 0.085, dur * 0.55, S_TRI, vol * 0.25, 1800);
     }
 
     // Rasgueo de Cuatro Venezolano (acorde arpegiado en 12 ms)
@@ -952,7 +954,7 @@ const CABINET_KEYS = {
       const third = minor ? 3 : 4;
       const notes = [rootMidi + 12, rootMidi + 12 + third, rootMidi + 19];
       for (let i = 0; i < 3; i++) {
-        this.voice(this.m2f(notes[i]), t0 + i * 0.011, dur, 'sawtooth', vol, 2400, 900);
+        this.voice(this.m2f(notes[i]), t0 + i * 0.011, dur, S_SAW, vol, 2400, 900);
       }
     }
 
@@ -962,7 +964,7 @@ const CABINET_KEYS = {
         if (kind === 'k') {
           const o = this.ctx.createOscillator();
           const g = this.ctx.createGain();
-          o.type = 'sine';
+          o.type = S_SINE;
           o.frequency.setValueAtTime(145, t0);
           o.frequency.exponentialRampToValueAtTime(38, t0 + 0.11);
           g.gain.setValueAtTime(vol * 1.5, t0);
@@ -973,7 +975,7 @@ const CABINET_KEYS = {
           o.stop(t0 + 0.13);
         } else if (kind === 'b') {
           this.voice(860, t0, 0.055, 'square', vol * 0.42, 2400);
-          this.voice(575, t0, 0.055, 'triangle', vol * 0.35, 1900);
+          this.voice(575, t0, 0.055, S_TRI, vol * 0.35, 1900);
         } else {
           const dur = kind === 's' ? 0.085 : 0.03;
           const len = M_max(1, M_floor(this.ctx.sampleRate * dur));
@@ -995,7 +997,7 @@ const CABINET_KEYS = {
       } catch (_) {}
     }
 
-    tone(f1, f2, dur = 0.1, type = 'triangle', vol = 0.08, delay = 0) {
+    tone(f1, f2, dur = 0.1, type = S_TRI, vol = 0.08, delay = 0) {
       this.init();
       if (this.muted || !this.ctx) return;
       try {
@@ -1017,55 +1019,55 @@ const CABINET_KEYS = {
 
     sfx(type, freq = 300) {
       switch (type) {
-        case 'move':
-          this.tone(520, 740, 0.05, 'triangle', 0.06);
+        case S_MOV:
+          this.tone(520, 740, 0.05, S_TRI, 0.06);
           break;
-        case 'select':
-          this.tone(523, 659, 0.08, 'triangle', 0.08);
-          this.tone(659, 1046, 0.14, 'triangle', 0.08, 0.06);
+        case S_SEL:
+          this.tone(523, 659, 0.08, S_TRI, 0.08);
+          this.tone(659, 1046, 0.14, S_TRI, 0.08, 0.06);
           break;
         case 'count':
-          this.tone(440, 440, 0.14, 'sine', 0.1);
+          this.tone(440, 440, 0.14, S_SINE, 0.1);
           break;
         case 'go':
-          this.tone(880, 1174, 0.3, 'triangle', 0.12);
+          this.tone(880, 1174, 0.3, S_TRI, 0.12);
           break;
         case 'box':
-          [523, 659, 784, 1046].forEach((n, i) => this.tone(n, n * 1.06, 0.06, 'sine', 0.07, i * 0.045));
+          [523, 659, 784, 1046].forEach((n, i) => this.tone(n, n * 1.06, 0.06, S_SINE, 0.07, i * 0.045));
           break;
         case 'itemReady':
-          this.tone(784, 1046, 0.12, 'triangle', 0.09);
+          this.tone(784, 1046, 0.12, S_TRI, 0.09);
           break;
-        case 'boost':
-          this.tone(180, 920, 0.32, 'sawtooth', 0.09);
-          this.tone(360, 1240, 0.28, 'triangle', 0.08, 0.03);
+        case S_BST:
+          this.tone(180, 920, 0.32, S_SAW, 0.09);
+          this.tone(360, 1240, 0.28, S_TRI, 0.08, 0.03);
           break;
         case 'hop':
-          this.tone(280, 520, 0.08, 'sine', 0.07);
+          this.tone(280, 520, 0.08, S_SINE, 0.07);
           break;
         case 'trick':
-          [587, 784, 987, 1174].forEach((n, i) => this.tone(n, n, 0.07, 'triangle', 0.09, i * 0.04));
+          [587, 784, 987, 1174].forEach((n, i) => this.tone(n, n, 0.07, S_TRI, 0.09, i * 0.04));
           break;
         case 'throw':
-          this.tone(680, 260, 0.12, 'triangle', 0.08);
+          this.tone(680, 260, 0.12, S_TRI, 0.08);
           break;
         case 'hit':
-          this.tone(180, 52, 0.28, 'sawtooth', 0.11);
+          this.tone(180, 52, 0.28, S_SAW, 0.11);
           break;
         case 'thunder':
-          this.tone(120, 38, 0.4, 'sawtooth', 0.12);
+          this.tone(120, 38, 0.4, S_SAW, 0.12);
           this.tone(920, 160, 0.22, 'square', 0.07, 0.04);
           break;
         case 'horn':
-          this.tone(freq, freq * 1.03, 0.12, 'sawtooth', 0.08);
-          this.tone(freq * 1.25, freq * 1.28, 0.16, 'sawtooth', 0.08, 0.08);
+          this.tone(freq, freq * 1.03, 0.12, S_SAW, 0.08);
+          this.tone(freq * 1.25, freq * 1.28, 0.16, S_SAW, 0.08, 0.08);
           break;
         case 'wall':
-          this.tone(130, 75, 0.07, 'triangle', 0.05);
+          this.tone(130, 75, 0.07, S_TRI, 0.05);
           break;
         case 'win':
           [523, 659, 784, 1046, 784, 1046].forEach((n, i) =>
-            this.tone(n, n, 0.13, 'triangle', 0.09, i * 0.1)
+            this.tone(n, n, 0.13, S_TRI, 0.09, i * 0.1)
           );
           break;
       }
@@ -1111,7 +1113,7 @@ const CABINET_KEYS = {
           const bRoot = ch[0];
           if (bar === 0 || bar === 3 || bar === 6 || bar === 10 || bar === 12) {
             const bn = bar === 6 ? bRoot + 7 : bar === 10 ? bRoot + 4 : bRoot;
-            this.voice(this.m2f(bn), t, stepSec * 1.9, 'triangle', 0.1, 920);
+            this.voice(this.m2f(bn), t, stepSec * 1.9, S_TRI, 0.1, 920);
             this.voice(this.m2f(bn + 12), t, stepSec * 1.2, 'square', 0.025, 800);
           }
           if (bar === 2 || bar === 5 || bar === 10 || bar === 14) {
@@ -1132,7 +1134,7 @@ const CABINET_KEYS = {
           const jRoot = ch[0];
           if (bar === 0 || bar === 4 || bar === 6 || bar === 10 || bar === 12) {
             const bn = bar === 6 || bar === 12 ? jRoot + 7 : jRoot;
-            this.voice(this.m2f(bn), t, stepSec * 1.8, 'triangle', 0.105, 920);
+            this.voice(this.m2f(bn), t, stepSec * 1.8, S_TRI, 0.105, 920);
           }
           if (bar === 2 || bar === 4 || bar === 8 || bar === 10 || bar === 14) {
             this.strum(jRoot + 12, ch[1] === 1, t, stepSec * 0.65, 0.028);
@@ -1365,8 +1367,8 @@ const CABINET_KEYS = {
       for (const ex of exPos) {
         ell(ctx, 'rgba(255, 61, 0, 0.85)', ex, -h * 0.06 + fh * 0.35, fw * 0.7, fh * 0.65);
         ell(ctx, '#ffea00', ex, -h * 0.08 + fh * 0.22, fw * 0.48, fh * 0.45);
-        ell(ctx, '#00e5ff', ex, -h * 0.1 + fh * 0.1, fw * 0.3, fh * 0.26);
-        ctx.fillStyle = '#ffffff';
+        ell(ctx, C_CYAN, ex, -h * 0.1 + fh * 0.1, fw * 0.3, fh * 0.26);
+        ctx.fillStyle = C_WHITE;
         ctx.fillRect(ex - fw * 0.15, -h * 0.12, fw * 0.3, fh * 0.18);
       }
     }
@@ -1378,9 +1380,9 @@ const CABINET_KEYS = {
       ctx.font = `bold ${fs}px monospace`;
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      ctx.fillStyle = '#090d16';
+      ctx.fillStyle = C_DARK;
       ctx.fillText(String(rankBadge), 2, ry + 2);
-      ctx.fillStyle = rankBadge === 1 ? '#ffe600' : '#ffab00';
+      ctx.fillStyle = rankBadge === 1 ? C_YELLOW : C_AB00;
       ctx.fillText(String(rankBadge), 0, ry);
       ctx.fillStyle = '#ff9100';
       ctx.fillRect(-4, ry + fs * 0.48, 8, 2);
@@ -1479,7 +1481,7 @@ const CABINET_KEYS = {
     }
   }
 
-  function drawText(scene, x, y, str, size = 16, color = '#ffffff', alignX = 0.5, shadow = true) {
+  function drawText(scene, x, y, str, size = 16, color = C_WHITE, alignX = 0.5, shadow = true) {
     let t = scene.textPool[scene.textIdx++];
     if (!t) {
       t = scene.add.text(0, 0, '', { fontFamily: 'Impact, "Arial Black", sans-serif', fontStyle: 'bold' });
@@ -1540,7 +1542,7 @@ const CABINET_KEYS = {
         rank: 4 - i,
         done: false,
         alive: true,
-        item: mode.id === 'tt' ? 'malta' : null,
+        item: mode.id === 'tt' ? S_MALTA : null,
         maltas: mode.id === 'tt' ? 3 : 0,
         roulT: 0,
         drifting: false,
@@ -1570,7 +1572,7 @@ const CABINET_KEYS = {
     st.boltT = 0;
   }
 
-  function addPopup(scene, pNum, text, color = '#ffe600') {
+  function addPopup(scene, pNum, text, color = C_YELLOW) {
     scene.popups.push({ pNum, text, color, life: 1.4 });
   }
 
@@ -1578,12 +1580,12 @@ const CABINET_KEYS = {
     const r = kart.rank || 1;
     const pool =
       r === 1
-        ? ['mango', 'mango', 'arepa', 'arepa', 'malta']
+        ? [S_MANGO, S_MANGO, S_AREPA, S_AREPA, S_MALTA]
         : r === 2
-        ? ['mango', 'arepa', 'reina', 'malta', 'alma']
+        ? [S_MANGO, S_AREPA, S_REINA, S_MALTA, S_ALMA]
         : r === 3
-        ? ['arepa', 'reina', 'malta', 'fiscal', 'bajon', 'alma']
-        : ['reina', 'malta', 'fiscal', 'bajon', 'alma', 'alma'];
+        ? [S_AREPA, S_REINA, S_MALTA, S_FISC, S_BAJON, S_ALMA]
+        : [S_REINA, S_MALTA, S_FISC, S_BAJON, S_ALMA, S_ALMA];
     return pool[M_floor(M_rand() * pool.length)];
   }
 
@@ -1607,34 +1609,34 @@ const CABINET_KEYS = {
       k.item = null;
     }
 
-    if (item === 'malta') {
+    if (item === S_MALTA) {
       k.boostT = time + 2200;
       k.speed = M_max(k.speed, k.veh.maxSpd * 1.32);
       if (k.isHuman) {
-        sfx.sfx('boost');
+        sfx.sfx(S_BST);
         addPopup(scene, k.pNum, '🍺 ¡MALTA BIEN FRÍA TURBO!', '#ff9800');
       }
-    } else if (item === 'alma') {
+    } else if (item === S_ALMA) {
       k.starT = time + 5500;
       k.boostT = M_max(k.boostT, time + 5500);
       if (k.isHuman) {
         sfx.sfx('win');
-        addPopup(scene, k.pNum, '🌟 ¡ALMA LLANERA INVENCIBLE!', '#ffe600');
+        addPopup(scene, k.pNum, '🌟 ¡ALMA LLANERA INVENCIBLE!', C_YELLOW);
       }
-    } else if (item === 'bajon') {
+    } else if (item === S_BAJON) {
       st.bajonT = time + 1800;
       st.boltT = time + 420;
       sfx.sfx('thunder');
-      addPopup(scene, 0, '⚡ ¡CSM SE FUE LA LUZ!', '#00e5ff');
+      addPopup(scene, 0, '⚡ ¡CSM SE FUE LA LUZ!', C_CYAN);
       for (const o of scene.karts) {
         if (o !== k && o.alive && time >= o.starT) {
           o.shrinkT = time + 4500;
           o.speed *= 0.65;
         }
       }
-    } else if (item === 'mango') {
+    } else if (item === S_MANGO) {
       scene.projectiles.push({
-        type: 'mango',
+        type: S_MANGO,
         asset: 'item_mango',
         owner: k,
         z: wrapZ(k.z - 50),
@@ -1648,32 +1650,32 @@ const CABINET_KEYS = {
         sfx.sfx('throw');
         addPopup(scene, k.pNum, '🥭 ¡MANGO BAJITO EN LA VÍA!', '#ffb700');
       }
-    } else if (item === 'arepa' || item === 'reina') {
+    } else if (item === S_AREPA || item === S_REINA) {
       const target = findRivalAhead(scene, k);
       scene.projectiles.push({
         type: item,
-        asset: item === 'reina' ? 'item_reina' : 'item_arepa',
+        asset: item === S_REINA ? 'item_reina' : 'item_arepa',
         owner: k,
         z: wrapZ(k.z + 32),
         offset: k.offset,
         speed: k.veh.maxSpd * 1.48,
         vOff: 0,
-        target: item === 'reina' ? target : null,
+        target: item === S_REINA ? target : null,
         life: 4.5,
         arm: time + 80,
       });
       if (k.isHuman) {
         sfx.sfx('throw');
-        addPopup(scene, k.pNum, item === 'reina' ? '🥑 ¡REINA PEPIADA TELEDIRIGIDA!' : '🫓 ¡AREPAZO PA LANTE!', '#76ff03');
+        addPopup(scene, k.pNum, item === S_REINA ? '🥑 ¡REINA PEPIADA TELEDIRIGIDA!' : '🫓 ¡AREPAZO PA LANTE!', '#76ff03');
       }
-    } else if (item === 'fiscal') {
+    } else if (item === S_FISC) {
       let leader = scene.karts[0];
       for (const c of scene.karts) {
         if (c !== k && c.alive && c.rank === 1) leader = c;
       }
       if (leader === k) leader = findRivalAhead(scene, k);
       scene.projectiles.push({
-        type: 'fiscal',
+        type: S_FISC,
         asset: 'item_fiscal',
         owner: k,
         z: wrapZ(k.z + 36),
@@ -1817,7 +1819,7 @@ const CABINET_KEYS = {
 
       const rumW1 = sw1 * 1.05,
         rumW2 = sw2 * 1.05;
-      quad(ctx, alt ? '#e2e8f0' : '#dc2626', sx2 - rumW2, sy2, sx2 + rumW2, sy2, sx1 + rumW1, sy1, sx1 - rumW1, sy1);
+      quad(ctx, alt ? C_LIGHT : '#dc2626', sx2 - rumW2, sy2, sx2 + rumW2, sy2, sx1 + rumW1, sy1, sx1 - rumW1, sy1);
 
       const roadCol = curr.ramp
         ? alt
@@ -1832,12 +1834,12 @@ const CABINET_KEYS = {
 
       const ew1 = M_max(1.5, sw1 * 0.022),
         ew2 = M_max(1, sw2 * 0.022);
-      quad(ctx, '#f8fafc', sx2 - sw2, sy2, sx2 - sw2 + ew2, sy2, sx1 - sw1 + ew1, sy1, sx1 - sw1, sy1);
-      quad(ctx, '#f8fafc', sx2 + sw2 - ew2, sy2, sx2 + sw2, sy2, sx1 + sw1, sy1, sx1 + sw1 - ew1, sy1);
+      quad(ctx, C_FAFC, sx2 - sw2, sy2, sx2 - sw2 + ew2, sy2, sx1 - sw1 + ew1, sy1, sx1 - sw1, sy1);
+      quad(ctx, C_FAFC, sx2 + sw2 - ew2, sy2, sx2 + sw2, sy2, sx1 + sw1, sy1, sx1 + sw1 - ew1, sy1);
       quad(ctx, 'rgba(248,250,252,0.85)', sx2 - ew2 * 0.7, sy2, sx2 + ew2 * 0.7, sy2, sx1 + ew1 * 0.7, sy1, sx1 - ew1 * 0.7, sy1);
 
       if (curr.idx < 2) {
-        quad(ctx, '#ffffff', sx2 - sw2, sy2, sx2 + sw2, sy2, sx1 + sw1, sy1, sx1 - sw1, sy1);
+        quad(ctx, C_WHITE, sx2 - sw2, sy2, sx2 + sw2, sy2, sx1 + sw1, sy1, sx1 - sw1, sy1);
       } else if (alt) {
         for (const laneOff of [-0.5, 0.5]) {
           const lx1 = sx1 + laneOff * sw1;
@@ -1898,7 +1900,7 @@ const CABINET_KEYS = {
 
           if (py - pSz < ps.clipY) {
             ell(ctx, 'rgba(0,0,0,0.45)', px, py - 2, pSz * 0.42, M_max(2, pSz * 0.14));
-            if (proj.type === 'reina' || proj.type === 'fiscal') {
+            if (proj.type === S_REINA || proj.type === S_FISC) {
               ell(
                 ctx,
                 'rgba(0,0,0,0)',
@@ -1907,12 +1909,12 @@ const CABINET_KEYS = {
                 pSz * 0.56,
                 M_max(3, pSz * 0.2),
                 0,
-                proj.type === 'fiscal' ? '#00e5ff' : '#76ff03',
+                proj.type === S_FISC ? C_CYAN : '#76ff03',
                 M_max(1.5, pSz * 0.06)
               );
             }
-            const spinRot = proj.type === 'arepa' || proj.type === 'reina' ? time * 0.012 : 0;
-            const hoverY = proj.type === 'mango' ? py : py - pSz * 0.12 + M_sin(time * 0.015) * (pSz * 0.06);
+            const spinRot = proj.type === S_AREPA || proj.type === S_REINA ? time * 0.012 : 0;
+            const hoverY = proj.type === S_MANGO ? py : py - pSz * 0.12 + M_sin(time * 0.015) * (pSz * 0.06);
             drawPixelSpriteAnchored(ctx, proj.asset, px, hoverY, pSz, pSz, spinRot, ps.clipY);
           }
         }
@@ -1953,7 +1955,7 @@ const CABINET_KEYS = {
     }
 
     if (time < st.boltT) {
-      ctx.strokeStyle = '#00e5ff';
+      ctx.strokeStyle = C_CYAN;
       ctx.lineWidth = 5;
       ctx.beginPath();
       ctx.moveTo(viewCenterX - 40, vy);
@@ -2051,7 +2053,7 @@ const CABINET_KEYS = {
           if (!k.overheat && k.sChg > 0.45) {
             k.boostT = time + 1500;
             k.speed = k.veh.maxSpd * 1.25;
-            if (k.isHuman) addPopup(scene, k.pNum, '🔥 ¡ARRANQUE EXPLOSIVO!', '#39ff14');
+            if (k.isHuman) addPopup(scene, k.pNum, '🔥 ¡ARRANQUE EXPLOSIVO!', C_GREEN);
           } else if (k.overheat) {
             k.spinT = time + 850;
             if (k.isHuman) addPopup(scene, k.pNum, '💨 ¡SE AHOGÓ EL MOTOR!', '#ff5252');
@@ -2075,7 +2077,7 @@ const CABINET_KEYS = {
           const last = alive[0];
           last.alive = false;
           sfx.sfx('hit');
-          addPopup(scene, 0, `🍺 ¡${last.veh.name} PAGA LA CURDA!`, '#ff1744');
+          addPopup(scene, 0, `🍺 ¡${last.veh.name} PAGA LA CURDA!`, C_RED);
           const rem = scene.karts.filter((k) => k.alive);
           if (rem.length <= 1 || !rem.some((k) => k.isHuman)) {
             finishMatch(scene);
@@ -2150,7 +2152,7 @@ const CABINET_KEYS = {
         if (curSeg.boost && M_abs(k.offset) < 0.88) {
           k.boostT = M_max(k.boostT, time + 1250);
           k.speed = M_max(k.speed, k.veh.maxSpd * 1.26);
-          if (k.isHuman) sfx.sfx('boost');
+          if (k.isHuman) sfx.sfx(S_BST);
         }
         if (curSeg.ramp && k.vy3d <= 0) {
           k.vy3d = 195;
@@ -2159,7 +2161,7 @@ const CABINET_KEYS = {
           k.boostT = M_max(k.boostT, time + 1250);
           if (k.isHuman) {
             sfx.sfx('hop');
-            addPopup(scene, k.pNum, '🌊 ¡SALTO ÁNGEL EN 3D!', '#7ef9ff');
+            addPopup(scene, k.pNum, '🌊 ¡SALTO ÁNGEL EN 3D!', C_F9FF);
           }
         }
       } else if (k.y3d > 14 && !k.tricked && wantDrift) {
@@ -2168,7 +2170,7 @@ const CABINET_KEYS = {
         k.boostT = M_max(k.boostT, time + 2100);
         if (k.isHuman) {
           sfx.sfx('trick');
-          addPopup(scene, k.pNum, '🦜 ¡PIRUETA AÉREA + SÚPER TURBO!', '#ffe600');
+          addPopup(scene, k.pNum, '🦜 ¡PIRUETA AÉREA + SÚPER TURBO!', C_YELLOW);
         }
       }
 
@@ -2188,15 +2190,15 @@ const CABINET_KEYS = {
               k.boostT = M_max(k.boostT, time + 1600);
               k.speed = M_max(k.speed, k.veh.maxSpd * 1.3);
               if (k.isHuman) {
-                sfx.sfx('boost');
+                sfx.sfx(S_BST);
                 addPopup(scene, k.pNum, '🔥 ¡SÚPER TURBO!', '#ff6d00');
               }
             } else if (k.dChg >= 0.38) {
               k.boostT = M_max(k.boostT, time + 950);
               k.speed = M_max(k.speed, k.veh.maxSpd * 1.18);
               if (k.isHuman) {
-                sfx.sfx('boost');
-                addPopup(scene, k.pNum, '⚡ ¡MINI-TURBO!', '#00e5ff');
+                sfx.sfx(S_BST);
+                addPopup(scene, k.pNum, '⚡ ¡MINI-TURBO!', C_CYAN);
               }
             }
             k.drifting = false;
@@ -2274,7 +2276,7 @@ const CABINET_KEYS = {
             }
           } else if (k.isHuman) {
             sfx.sfx('itemReady');
-            addPopup(scene, k.pNum, k.lap === mode.laps ? '🔥 ¡ÚLTIMA VUELTA!' : `🏁 VUELTA ${k.lap}/${mode.laps}`, '#ffe600');
+            addPopup(scene, k.pNum, k.lap === mode.laps ? '🔥 ¡ÚLTIMA VUELTA!' : `🏁 VUELTA ${k.lap}/${mode.laps}`, C_YELLOW);
           }
         }
       }
@@ -2343,7 +2345,7 @@ const CABINET_KEYS = {
         continue;
       }
 
-      if ((p.type === 'reina' || p.type === 'fiscal') && p.target && p.target.alive) {
+      if ((p.type === S_REINA || p.type === S_FISC) && p.target && p.target.alive) {
         p.offset = lerp(p.offset, p.target.offset, dt * 6.5);
       } else {
         p.offset += p.vOff * dt;
@@ -2358,9 +2360,9 @@ const CABINET_KEYS = {
           if (p.owner === k && time < p.arm + 500) continue;
           if (M_abs(shortestTrackDelta(p.z, k.z)) < 58 && M_abs(p.offset - k.offset) < 0.36) {
             const msg =
-              p.type === 'mango'
+              p.type === S_MANGO
                 ? '¡RESCATA PISO!'
-                : p.type === 'fiscal'
+                : p.type === S_FISC
                 ? '🚨 ¡MULTADO POR EL FISCAL!'
                 : '🫓 ¡TOMA TU AREPAZO!';
             inflictSpinOut(scene, k, p.owner, time, msg);
@@ -2381,7 +2383,7 @@ const CABINET_KEYS = {
     } else {
       renderViewport3D(scene, ctx, scene.karts[0], 0, 0, W, H / 2 - 2, time);
       renderViewport3D(scene, ctx, scene.karts[1], 0, H / 2 + 2, W, H / 2 - 2, time);
-      ctx.fillStyle = '#ffe600';
+      ctx.fillStyle = C_YELLOW;
       ctx.fillRect(0, H / 2 - 2, W, 4);
     }
 
@@ -2391,7 +2393,7 @@ const CABINET_KEYS = {
     drawMatchHUD(scene, time, dt, countStep);
 
     if (eatAny(['START1', 'START2'])) {
-      sfx.sfx('select');
+      sfx.sfx(S_SEL);
       st.phase = 'title';
       clearPressed();
     }
@@ -2406,7 +2408,7 @@ const CABINET_KEYS = {
       const botY = st.players === 2 && k.pNum === 1 ? H / 2 - 8 : H - 8;
 
       // 1. Caja de Ruleta de Poder estilo Mario Kart (centro superior)
-      ctx.fillStyle = 'rgba(7, 13, 25, 0.88)';
+      ctx.fillStyle = C_BG88;
       ctx.beginPath();
       ctx.roundRect(W / 2 - 115, topY, 230, 56, 10);
       ctx.fill();
@@ -2423,8 +2425,8 @@ const CABINET_KEYS = {
         mh = st.players === 2 ? 72 : 88;
       const mx0 = W - mw - 16,
         my0 = botY - mh - 6;
-      ctx.fillStyle = 'rgba(7, 13, 25, 0.88)';
-      ctx.strokeStyle = '#00e5ff';
+      ctx.fillStyle = C_BG88;
+      ctx.strokeStyle = C_CYAN;
       ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.roundRect(mx0 - 8, my0 - 8, mw + 16, mh + 16, 10);
@@ -2444,13 +2446,13 @@ const CABINET_KEYS = {
         ctx.closePath();
 
         // Borde exterior oscuro + asfalto gris + línea central blanca de circuito
-        ctx.strokeStyle = '#090d16';
+        ctx.strokeStyle = C_DARK;
         ctx.lineWidth = 10;
         ctx.stroke();
         ctx.strokeStyle = '#475569';
         ctx.lineWidth = 6.5;
         ctx.stroke();
-        ctx.strokeStyle = '#fde047';
+        ctx.strokeStyle = C_E047;
         ctx.lineWidth = 1.5;
         ctx.stroke();
 
@@ -2458,9 +2460,9 @@ const CABINET_KEYS = {
         const stPt = miniMapPts[0];
         const sx = mx0 + stPt.nx * mw;
         const sy = my0 + stPt.ny * mh;
-        ctx.fillStyle = '#ffffff';
+        ctx.fillStyle = C_WHITE;
         ctx.fillRect(sx - 4, sy - 4, 8, 8);
-        ctx.fillStyle = '#ef4444';
+        ctx.fillStyle = C_4444;
         ctx.fillRect(sx - 4, sy - 4, 4, 4);
         ctx.fillRect(sx, sy, 4, 4);
 
@@ -2473,7 +2475,7 @@ const CABINET_KEYS = {
           if (o === k) {
             ell(ctx, 'rgba(255, 230, 0, 0.38)', rx, ry, 7.5, 7.5);
           }
-          ell(ctx, o.veh.hex, rx, ry, o === k ? 4.8 : 3.6, o === k ? 4.8 : 3.6, 0, o === k ? '#ffffff' : '#090d16', 1.5);
+          ell(ctx, o.veh.hex, rx, ry, o === k ? 4.8 : 3.6, o === k ? 4.8 : 3.6, 0, o === k ? C_WHITE : C_DARK, 1.5);
         }
       }
     }
@@ -2490,8 +2492,8 @@ const CABINET_KEYS = {
       const botY = st.players === 2 && k.pNum === 1 ? H / 2 - 8 : H - 8;
 
       boxUI(g, 12, topY, 224, 56, 10, 0x070d19, 0.88, 2, k.veh.accent, 0.95);
-      const rankCols = ['#ffe600', '#00e5ff', '#ff9800', '#ff5252'];
-      drawText(scene, 42, topY + 28, `${k.rank}°`, 34, rankCols[k.rank - 1] || '#ffffff');
+      const rankCols = [C_YELLOW, C_CYAN, '#ff9800', '#ff5252'];
+      drawText(scene, 42, topY + 28, `${k.rank}°`, 34, rankCols[k.rank - 1] || C_WHITE);
 
       const lapStr =
         mode.id === 'ko'
@@ -2500,13 +2502,13 @@ const CABINET_KEYS = {
       const mins = String(M_floor(st.elapsed / 60)).padStart(2, '0');
       const secs = String(M_floor(st.elapsed % 60)).padStart(2, '0');
 
-      drawText(scene, 78, topY + 18, k.veh.name, 13, '#ffe600', 0);
-      drawText(scene, 78, topY + 40, `${lapStr} • ${mins}:${secs}`, 12, '#ffffff', 0);
+      drawText(scene, 78, topY + 18, k.veh.name, 13, C_YELLOW, 0);
+      drawText(scene, 78, topY + 40, `${lapStr} • ${mins}:${secs}`, 12, C_WHITE, 0);
 
       boxUI(g, W / 2 - 115, topY, 230, 56, 10, null, 0, 2, 0xffe600, 0.95);
       let itemTitle = 'CAJA DE PODER',
         itemSub = 'BOTÓN 1 (U): CORNETA',
-        itemCol = '#94a3b8';
+        itemCol = C_SLATE;
       if (time < k.roulT) {
         const rIt = ITEMS[M_floor(time / 70) % ITEMS.length];
         itemTitle = rIt.short;
@@ -2519,7 +2521,7 @@ const CABINET_KEYS = {
         itemCol = it.col;
       }
       drawText(scene, W / 2 - 52, topY + 18, itemTitle, 13, itemCol, 0);
-      drawText(scene, W / 2 - 52, topY + 39, itemSub, 11, '#ffffff', 0);
+      drawText(scene, W / 2 - 52, topY + 39, itemSub, 11, C_WHITE, 0);
 
       const curZone = ZONES[segments[M_floor(wrapZ(k.z) / SEG_LEN) % TOTAL_SEGS].zone] || ZONES[0];
       boxUI(g, W - 236, topY, 224, 38, 8, 0x070d19, 0.88, 2, 0x00e5ff, 0.9);
@@ -2527,7 +2529,7 @@ const CABINET_KEYS = {
 
       const kmh = M_round((M_abs(k.speed) / k.veh.maxSpd) * 145);
       boxUI(g, 12, botY - 40, 128, 36, 8, 0x070d19, 0.88, 2, 0x39ff14, 0.9);
-      drawText(scene, 76, botY - 22, `${kmh} KM/H`, 17, time < k.boostT ? '#ff9100' : '#39ff14');
+      drawText(scene, 76, botY - 22, `${kmh} KM/H`, 17, time < k.boostT ? '#ff9100' : C_GREEN);
     }
 
     if (st.phase === 'countdown') {
@@ -2537,9 +2539,9 @@ const CABINET_KEYS = {
         g.fillStyle(active ? (countStep === 1 ? 0xffe600 : 0xff1744) : 0x263238, 1);
         g.fillCircle(W / 2 - 64 + c * 64, H / 2 - 20, 16);
       }
-      drawText(scene, W / 2, H / 2 + 28, `PREPARADOS... ${countStep}`, 24, '#ffe600');
+      drawText(scene, W / 2, H / 2 + 28, `PREPARADOS... ${countStep}`, 24, C_YELLOW);
     } else if (st.elapsed < 1.1) {
-      drawText(scene, W / 2, H / 2 - 20, '🏁 ¡DALE PUES! 🏁', 38, '#39ff14');
+      drawText(scene, W / 2, H / 2 - 20, '🏁 ¡DALE PUES! 🏁', 38, C_GREEN);
     }
 
     for (let i = scene.popups.length - 1; i >= 0; i--) {
@@ -2627,7 +2629,7 @@ const CABINET_KEYS = {
       drawKartSprite3D(ctx, VEHICLES[i].id, cx, cy + 16, 86, previewSteer, time, false, false);
     }
 
-    ctx.fillStyle = 'rgba(7, 13, 25, 0.88)';
+    ctx.fillStyle = C_BG88;
     ctx.beginPath();
     ctx.roundRect(410, 368, 325, 144, 10);
     ctx.fill();
@@ -2647,19 +2649,19 @@ const CABINET_KEYS = {
     g.fillStyle(0xe6192e, 1);
     g.fillRect(115, 36, 570, 6);
 
-    drawText(scene, W / 2, 68, 'CAIMANERA KART', 42, '#ffffff');
-    drawText(scene, W / 2, 102, 'GRAN CIRCUITO VENEZUELA 3D', 17, '#ffe600');
+    drawText(scene, W / 2, 68, 'CAIMANERA KART', 42, C_WHITE);
+    drawText(scene, W / 2, 102, 'GRAN CIRCUITO VENEZUELA 3D', 17, C_YELLOW);
     drawText(scene, W / 2, 127, '⬆ CARACAS  •  ⬅ SALTO ÁNGEL  •  ➡ MARACAIBO  •  ⬇ LOS LLANOS', 12, '#e0f2f1');
 
     for (let i = 0; i < 4; i++) {
       const v = VEHICLES[i];
       const cx = 148 + i * 168;
-      drawText(scene, cx, 258, v.name, 13, '#ffe600');
-      drawText(scene, cx, 338, v.sub.split('•')[0].trim(), 10, '#7ef9ff');
+      drawText(scene, cx, 258, v.name, 13, C_YELLOW);
+      drawText(scene, cx, 338, v.sub.split('•')[0].trim(), 10, C_F9FF);
     }
 
     boxUI(g, 65, 368, 325, 144, 10, 0x070d19, 0.88, 2, 0x00e5ff, 0.8);
-    drawText(scene, 227, 388, '🏆 TOP RÉCORDS ARCADE', 14, '#ffe600');
+    drawText(scene, 227, 388, '🏆 TOP RÉCORDS ARCADE', 14, C_YELLOW);
 
     for (let i = 0; i < M_min(4, st.leaderboard.length); i++) {
       const row = st.leaderboard[i];
@@ -2669,24 +2671,24 @@ const CABINET_KEYS = {
         416 + i * 22,
         `${i + 1}. ${row.name.padEnd(3, ' ')}  ${String(row.score).padStart(4, '0')} pts  [${row.mode || 'COPA'}]`,
         12,
-        i === 0 ? '#39ff14' : '#ffffff',
+        i === 0 ? C_GREEN : C_WHITE,
         0
       );
     }
 
     boxUI(g, 410, 368, 325, 144, 10, null, 0, 2, 0xffae00, 0.85);
     drawText(scene, 572, 388, '📦 PODERES VENEZOLANOS', 14, '#ffae00');
-    drawText(scene, 452, 418, 'Mango Bajito: ¡RESCATA PISO!', 12, '#ffffff', 0);
-    drawText(scene, 452, 440, 'Arepa / Reina Pepiada (Homing)', 12, '#ffffff', 0);
-    drawText(scene, 452, 462, 'El Fiscal (Al 1°) / Malta Turbo', 12, '#ffffff', 0);
-    drawText(scene, 452, 484, '¡CSM SE FUE LA LUZ! / Estrella', 12, '#ffffff', 0);
+    drawText(scene, 452, 418, 'Mango Bajito: ¡RESCATA PISO!', 12, C_WHITE, 0);
+    drawText(scene, 452, 440, 'Arepa / Reina Pepiada (Homing)', 12, C_WHITE, 0);
+    drawText(scene, 452, 462, 'El Fiscal (Al 1°) / Malta Turbo', 12, C_WHITE, 0);
+    drawText(scene, 452, 484, '¡CSM SE FUE LA LUZ! / Estrella', 12, C_WHITE, 0);
 
     boxUI(g, 165, 528, 470, 44, 10, 0xe1ff00, 0.7 + 0.3 * M_sin(time * 0.008), 0, 0);
-    drawText(scene, W / 2, 550, 'PRESIONA START (ENTER) O BOTÓN 1 (U / R) PARA JUGAR', 14, '#050b12', 0.5, false);
+    drawText(scene, W / 2, 550, 'PRESIONA START (ENTER) O BOTÓN 1 (U / R) PARA JUGAR', 14, C_0B12, 0.5, false);
 
     if (eatAny(['START1', 'START2', 'P1_1', 'P2_1', 'P1_2', 'P2_2'])) {
       sfx.init();
-      sfx.sfx('select');
+      sfx.sfx(S_SEL);
       st.phase = 'setup';
       st.setupStep = 0;
       st.p1Ready = false;
@@ -2713,8 +2715,8 @@ const CABINET_KEYS = {
       const isP1 = st.p1Veh === i;
       const isP2 = st.players === 2 && st.p2Veh === i;
 
-      ctx.fillStyle = isP1 || isP2 ? '#11223d' : '#0a1324';
-      ctx.strokeStyle = isP1 ? '#e1ff00' : isP2 ? '#ff6ec7' : '#263859';
+      ctx.fillStyle = isP1 || isP2 ? C_223D : C_1324;
+      ctx.strokeStyle = isP1 ? C_E1FF : isP2 ? C_6EC7 : C_3859;
       ctx.lineWidth = isP1 || isP2 ? 3 : 1.5;
       ctx.beginPath();
       ctx.roundRect(cx - 82, cy - 110, 164, 210, 12);
@@ -2728,123 +2730,123 @@ const CABINET_KEYS = {
       for (let s = 0; s < 4; s++) {
         const sy = cy + 38 + s * 14;
         for (let b = 0; b < 5; b++) {
-          ctx.fillStyle = b < v.stats[s] ? v.hex : '#1e293b';
+          ctx.fillStyle = b < v.stats[s] ? v.hex : C_293B;
           ctx.fillRect(cx - 30 + b * 18, sy - 4, 14, 7);
         }
-        drawText(scene, cx - 64, sy, sLabels[s], 10, '#94a3b8', 0);
+        drawText(scene, cx - 64, sy, sLabels[s], 10, C_SLATE, 0);
       }
     }
 
     scene.screenTex.refresh();
 
     boxUI(g, 40, 18, 720, 48, 10, 0x091326, 0.95, 2, 0x00e5ff, 0.9);
-    drawText(scene, W / 2, 42, 'ARMA TU CAIMANERA 3D • ELIGE MODO Y NAVE', 22, '#ffe600');
+    drawText(scene, W / 2, 42, 'ARMA TU CAIMANERA 3D • ELIGE MODO Y NAVE', 22, C_YELLOW);
 
     const p1BoxCol = st.players === 1 ? 0x39ff14 : 0x334155;
     const p2BoxCol = st.players === 2 ? 0xff6ec7 : 0x334155;
     boxUI(g, 55, 80, 160, 42, 8, st.players === 1 ? 0x13381e : 0x0b1528, 0.95, st.setupStep === 0 ? 3 : 1.5, p1BoxCol);
     boxUI(g, 225, 80, 160, 42, 8, st.players === 2 ? 0x38132e : 0x0b1528, 0.95, st.setupStep === 0 ? 3 : 1.5, p2BoxCol);
-    drawText(scene, 135, 101, '👤 1 JUGADOR', 14, st.players === 1 ? '#39ff14' : '#94a3b8');
-    drawText(scene, 305, 101, '👥 2 JUGADORES', 14, st.players === 2 ? '#ff6ec7' : '#94a3b8');
+    drawText(scene, 135, 101, '👤 1 JUGADOR', 14, st.players === 1 ? C_GREEN : C_SLATE);
+    drawText(scene, 305, 101, '👥 2 JUGADORES', 14, st.players === 2 ? C_6EC7 : C_SLATE);
 
     const curMode = MODES[st.modeIdx];
     boxUI(g, 405, 80, 340, 42, 8, 0x162238, 0.95, st.setupStep === 0 ? 3 : 1.5, 0xffae00, 1);
-    drawText(scene, 575, 101, `◀  ${curMode.name}  ▶`, 15, '#ffe600');
+    drawText(scene, 575, 101, `◀  ${curMode.name}  ▶`, 15, C_YELLOW);
 
     boxUI(g, 40, 132, 720, 34, 8, 0x091426, 0.85, 0, 0);
-    drawText(scene, W / 2, 149, curMode.desc, 13, '#7ef9ff');
+    drawText(scene, W / 2, 149, curMode.desc, 13, C_F9FF);
 
     for (let i = 0; i < 4; i++) {
       const v = VEHICLES[i];
       const cx = 122 + i * 185;
       const cy = 320;
-      drawText(scene, cx, cy + 4, v.name, 14, '#ffe600');
-      drawText(scene, cx, cy + 20, v.sub, 9, '#cbd5e1');
+      drawText(scene, cx, cy + 4, v.name, 14, C_YELLOW);
+      drawText(scene, cx, cy + 20, v.sub, 9, C_MUTED);
 
       if (st.p1Veh === i) {
         boxUI(g, cx - 72, cy - 128, 64, 22, 6, st.p1Ready ? 0x39ff14 : 0xe1ff00, 1, 0, 0);
-        drawText(scene, cx - 40, cy - 117, st.p1Ready ? 'P1 LISTO' : 'P1', 11, '#050b12', 0.5, false);
+        drawText(scene, cx - 40, cy - 117, st.p1Ready ? 'P1 LISTO' : 'P1', 11, C_0B12, 0.5, false);
       }
       if (st.players === 2 && st.p2Veh === i) {
         boxUI(g, cx + 8, cy - 128, 64, 22, 6, st.p2Ready ? 0x39ff14 : 0xff6ec7, 1, 0, 0);
-        drawText(scene, cx + 40, cy - 117, st.p2Ready ? 'P2 LISTO' : 'P2', 11, '#050b12', 0.5, false);
+        drawText(scene, cx + 40, cy - 117, st.p2Ready ? 'P2 LISTO' : 'P2', 11, C_0B12, 0.5, false);
       }
     }
 
     boxUI(g, 40, 452, 720, 82, 10, 0x070d19, 0.92, 2, 0xe1ff00, 0.85);
     const helpMsg =
       st.setupStep === 0
-        ? 'PASO 1: ⬆/⬇ JUGADORES • ⬅/➡ MODALIDAD • PULSA BOTÓN 1 (U / ENTER) PARA ELEGIR NAVE'
-        : 'PASO 2: ⬅/➡ ELIGE TU NAVE • PULSA BOTÓN 1 (U / ENTER) PARA ARRANCAR LA CARRERA';
-    drawText(scene, W / 2, 472, helpMsg, 13, '#ffe600');
+        ? 'PASO 1: ⬆/⬇ Jugadores • ⬅/➡ Modo • Botón 1 para continuar'
+        : 'PASO 2: ⬅/➡ Nave • Botón 1 para arrancar la carrera';
+    drawText(scene, W / 2, 472, helpMsg, 13, C_YELLOW);
     drawText(
       scene,
       W / 2,
       495,
-      'CONTROLES 3D: W/S ACELERAR/FRENAR • A/D CRUZAR • U PODER/CORNETA • I/SHIFT DERRAPAR (MINI-TURBO)',
+      'CONTROLES: W/S Acelerar/Frenar • A/D Cruzar • U Ítem/Corneta • I Derrapar',
       12,
-      '#ffffff'
+      C_WHITE
     );
     drawText(
       scene,
       W / 2,
       516,
-      'TIP: ¡ACELERA EN EL "2" DEL SEMÁFORO PARA ARRANQUE EXPLOSIVO Y SALTA EN LA RAMPA DE CANAIMA!',
+      'TIP: ¡Acelera en el "2" del semáforo para turbo de arranque y salta en rampas!',
       11,
-      '#39ff14'
+      C_GREEN
     );
 
     if (st.setupStep === 0) {
       if (eat('P1_U') || eat('P1_D') || eat('P2_U') || eat('P2_D')) {
         st.players = st.players === 1 ? 2 : 1;
-        sfx.sfx('move');
+        sfx.sfx(S_MOV);
       }
       if (eat('P1_L') || eat('P2_L')) {
         st.modeIdx = (st.modeIdx + MODES.length - 1) % MODES.length;
-        sfx.sfx('move');
+        sfx.sfx(S_MOV);
       }
       if (eat('P1_R') || eat('P2_R')) {
         st.modeIdx = (st.modeIdx + 1) % MODES.length;
-        sfx.sfx('move');
+        sfx.sfx(S_MOV);
       }
       if (eatAny(['P1_1', 'START1', 'P2_1', 'START2'])) {
         st.setupStep = 1;
-        sfx.sfx('select');
+        sfx.sfx(S_SEL);
       }
     } else {
       if (!st.p1Ready) {
         if (eat('P1_L')) {
           st.p1Veh = (st.p1Veh + 3) % 4;
-          sfx.sfx('move');
+          sfx.sfx(S_MOV);
         }
         if (eat('P1_R')) {
           st.p1Veh = (st.p1Veh + 1) % 4;
-          sfx.sfx('move');
+          sfx.sfx(S_MOV);
         }
         if (eatAny(['P1_1', 'START1'])) {
           st.p1Ready = true;
-          sfx.sfx('select');
+          sfx.sfx(S_SEL);
         }
       }
       if (st.players === 2 && !st.p2Ready) {
         if (eat('P2_L')) {
           st.p2Veh = (st.p2Veh + 3) % 4;
-          sfx.sfx('move');
+          sfx.sfx(S_MOV);
         }
         if (eat('P2_R')) {
           st.p2Veh = (st.p2Veh + 1) % 4;
-          sfx.sfx('move');
+          sfx.sfx(S_MOV);
         }
         if (eatAny(['P2_1', 'START2'])) {
           st.p2Ready = true;
-          sfx.sfx('select');
+          sfx.sfx(S_SEL);
         }
       }
       if (eat('P1_2') || eat('P2_2')) {
         st.setupStep = 0;
         st.p1Ready = false;
         st.p2Ready = false;
-        sfx.sfx('move');
+        sfx.sfx(S_MOV);
       }
       if (st.p1Ready && (st.players === 1 || st.p2Ready)) {
         startRaceMatch(scene);
@@ -2868,11 +2870,11 @@ const CABINET_KEYS = {
     scene.screenTex.refresh();
 
     boxUI(g, 55, 22, 690, 88, 12, 0x0b162c, 0.96, 3, 0xffe600, 1);
-    drawText(scene, W / 2, 50, st.winTitle, 24, '#ffe600');
-    drawText(scene, W / 2, 84, st.winSub, 14, '#7ef9ff');
+    drawText(scene, W / 2, 50, st.winTitle, 24, C_YELLOW);
+    drawText(scene, W / 2, 84, st.winSub, 14, C_F9FF);
 
     boxUI(g, 55, 124, 690, 142, 10, 0x070f1e, 0.92, 2, 0x00e5ff, 0.85);
-    drawText(scene, W / 2, 144, '🏁 POSICIONES DE LA CAIMANERA 🏁', 15, '#39ff14');
+    drawText(scene, W / 2, 144, '🏁 POSICIONES DE LA CAIMANERA 🏁', 15, C_GREEN);
 
     const sorted = [...scene.karts].sort((a, b) => a.rank - b.rank);
     for (let i = 0; i < sorted.length; i++) {
@@ -2884,14 +2886,14 @@ const CABINET_KEYS = {
         ry,
         `${k.rank}°  ${k.id.padEnd(6, ' ')} • ${k.veh.name}`,
         14,
-        k.isHuman ? '#ffe600' : '#ffffff',
+        k.isHuman ? C_YELLOW : C_WHITE,
         0
       );
       const extra =
         MODES[st.modeIdx].id === 'ko'
           ? (k.alive ? '¡SOBREVIVIÓ!' : 'ELIMINADO')
           : `Vuelta ${M_min(k.lap, 3)}`;
-      drawText(scene, 530, ry, extra, 13, '#00e5ff', 0);
+      drawText(scene, 530, ry, extra, 13, C_CYAN, 0);
     }
 
     const ne = st.ne;
@@ -2903,12 +2905,12 @@ const CABINET_KEYS = {
         304,
         `🏆 ¡NUEVO RÉCORD (${st.finalScore} PTS)! INGRESA TUS INICIALES:`,
         16,
-        '#ffe600'
+        C_YELLOW
       );
 
       const slotsStr = ne.chars.join('  ');
       boxUI(g, W / 2 - 75, 322, 150, 36, 8, 0x050912, 1, 2, 0x39ff14, 1);
-      drawText(scene, W / 2, 340, slotsStr, 22, '#39ff14');
+      drawText(scene, W / 2, 340, slotsStr, 22, C_GREEN);
 
       for (let r = 0; r < KB_ROWS.length; r++) {
         const rowStr = KB_ROWS[r];
@@ -2924,7 +2926,7 @@ const CABINET_KEYS = {
             ky,
             ch === '<' ? '⌫' : ch === '✓' ? 'OK' : ch,
             14,
-            sel ? '#050b12' : '#ffffff',
+            sel ? C_0B12 : C_WHITE,
             0.5,
             !sel
           );
@@ -2934,33 +2936,33 @@ const CABINET_KEYS = {
       if (time >= ne.cd) {
         if (eat('P1_L') || eat('P2_L')) {
           ne.col = (ne.col + KB_ROWS[ne.row].length - 1) % KB_ROWS[ne.row].length;
-          sfx.sfx('move');
+          sfx.sfx(S_MOV);
         }
         if (eat('P1_R') || eat('P2_R')) {
           ne.col = (ne.col + 1) % KB_ROWS[ne.row].length;
-          sfx.sfx('move');
+          sfx.sfx(S_MOV);
         }
         if (eat('P1_U') || eat('P2_U')) {
           ne.row = (ne.row + KB_ROWS.length - 1) % KB_ROWS.length;
           ne.col = M_min(ne.col, KB_ROWS[ne.row].length - 1);
-          sfx.sfx('move');
+          sfx.sfx(S_MOV);
         }
         if (eat('P1_D') || eat('P2_D')) {
           ne.row = (ne.row + 1) % KB_ROWS.length;
           ne.col = M_min(ne.col, KB_ROWS[ne.row].length - 1);
-          sfx.sfx('move');
+          sfx.sfx(S_MOV);
         }
 
         if (eatAny(['P1_1', 'P2_1'])) {
           const picked = KB_ROWS[ne.row][ne.col];
           if (picked === '<') {
             if (ne.chars.length > 0) ne.chars.pop();
-            sfx.sfx('move');
+            sfx.sfx(S_MOV);
           } else if (picked === '✓') {
             commitScore(scene);
           } else {
             if (ne.chars.length < 3) ne.chars.push(picked);
-            sfx.sfx('select');
+            sfx.sfx(S_SEL);
             if (ne.chars.length === 3) {
               ne.row = 2;
               ne.col = KB_ROWS[2].length - 1;
@@ -2968,14 +2970,14 @@ const CABINET_KEYS = {
           }
         } else if (eatAny(['P1_2', 'P2_2'])) {
           if (ne.chars.length > 0) ne.chars.pop();
-          sfx.sfx('move');
+          sfx.sfx(S_MOV);
         } else if (eatAny(['START1', 'START2'])) {
           commitScore(scene);
         }
       }
     } else {
       boxUI(g, 55, 280, 690, 220, 12, 0x0b1528, 0.95, 2, 0x39ff14, 0.95);
-      drawText(scene, W / 2, 306, '🏆 TABLA HISTÓRICA DE RÉCORDS 🏆', 18, '#ffe600');
+      drawText(scene, W / 2, 306, '🏆 TABLA HISTÓRICA DE RÉCORDS 🏆', 18, C_YELLOW);
 
       for (let i = 0; i < M_min(6, st.leaderboard.length); i++) {
         const row = st.leaderboard[i];
@@ -2983,20 +2985,20 @@ const CABINET_KEYS = {
           scene,
           170,
           338 + i * 24,
-          `${i + 1}.  ${row.name.padEnd(4, ' ')} • ${String(row.score).padStart(4, '0')} PTS • ${row.mode || 'COPA VE'} (${row.veh || 'MALIBU'})`,
+          `${i + 1}.  ${row.name.padEnd(4, ' ')} • ${String(row.score).padStart(4, '0')} PTS • ${row.mode || S_COPA} (${row.veh || 'MALIBU'})`,
           14,
-          i === 0 ? '#39ff14' : '#ffffff',
+          i === 0 ? C_GREEN : C_WHITE,
           0
         );
       }
 
       if (eatAny(['P1_1', 'P2_1', 'START1', 'START2'])) {
-        sfx.sfx('select');
+        sfx.sfx(S_SEL);
         startRaceMatch(scene);
         clearPressed();
         return;
       } else if (eatAny(['P1_2', 'P2_2'])) {
-        sfx.sfx('move');
+        sfx.sfx(S_MOV);
         st.phase = 'title';
         clearPressed();
         return;
@@ -3012,7 +3014,7 @@ const CABINET_KEYS = {
         ? 'BOTÓN 1 / START: OTRA CARRERA   •   BOTÓN 2 (I / SHIFT): MENÚ PRINCIPAL'
         : 'ELIGE TUS 3 LETRAS CON EL JOYSTICK Y PULSA "OK" O START PARA GUARDAR',
       13,
-      '#050b12',
+      C_0B12,
       0.5,
       false
     );
